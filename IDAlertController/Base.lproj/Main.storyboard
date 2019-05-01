@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="MuS-zx-yvd">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Vazir-Bold.ttf">
+            <string>Vazir-Bold</string>
+        </array>
+        <array key="Vazir-Medium.ttf">
+            <string>Vazir-Medium</string>
+        </array>
+        <array key="Vazir.ttf">
+            <string>Vazir</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="a6S-i9-icI">
+            <objects>
+                <viewController id="MuS-zx-yvd" customClass="ViewController" customModule="IDAlertController" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1oL-cv-ZTw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="عنوان" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EdT-wG-piG">
+                                <rect key="frame" x="306.5" y="146.5" width="44.5" height="31.5"/>
+                                <fontDescription key="fontDescription" name="Vazir-Medium" family="Vazir" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="نوع نمایش" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bB0-yf-5WP">
+                                <rect key="frame" x="264.5" y="95" width="86.5" height="31.5"/>
+                                <fontDescription key="fontDescription" name="Vazir-Medium" family="Vazir" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="45f-T0-pen">
+                                <rect key="frame" x="24" y="147" width="51" height="31"/>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HQX-A4-I2c">
+                                <rect key="frame" x="24" y="186" width="327" height="44"/>
+                                <string key="text">این در واقع همون title هست که نمایش داده میشه.
+بهش می‌تونین فونت و رنگ اختصاص بدین.</string>
+                                <fontDescription key="fontDescription" name="Vazir" family="Vazir" pointSize="14"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="آی‌دی‌آلرت‌کنترلر" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lnI-Nd-8Ps">
+                                <rect key="frame" x="24" y="36" width="327" height="44"/>
+                                <fontDescription key="fontDescription" name="Vazir-Bold" family="Vazir" pointSize="28"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="پیام" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jCO-HJ-Pg5">
+                                <rect key="frame" x="320" y="250" width="31" height="31.5"/>
+                                <fontDescription key="fontDescription" name="Vazir-Medium" family="Vazir" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4W8-PW-dbd">
+                                <rect key="frame" x="24" y="250.5" width="51" height="31"/>
+                            </switch>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6D0-TH-URi">
+                                <rect key="frame" x="24" y="388.5" width="51" height="31"/>
+                            </switch>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Uu2-ao-r2f">
+                                <rect key="frame" x="24" y="426.5" width="51" height="31"/>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gd5-vP-k2c">
+                                <rect key="frame" x="24" y="289.5" width="327" height="44"/>
+                                <string key="text">اینم در واقع میشه message که نمایش داده میشه.
+به اینم می‌تونین فونت و رنگ اختصاص بدین.</string>
+                                <fontDescription key="fontDescription" name="Vazir" family="Vazir" pointSize="14"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="علاوه‌بر این گزینه‌ها، برای هرکدوم از اکشن‌هایی که آماده می‌کنین، می‌تونین فونت و رنگ هم در نظر بگیرین." textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oHu-iY-Aqw">
+                                <rect key="frame" x="24" y="506" width="327" height="44"/>
+                                <fontDescription key="fontDescription" name="Vazir" family="Vazir" pointSize="14"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="عکس چپ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i4k-Gp-3Vd">
+                                <rect key="frame" x="293" y="393" width="58" height="22"/>
+                                <fontDescription key="fontDescription" name="Vazir" family="Vazir" pointSize="14"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="عکس راست" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3cW-HG-3hH">
+                                <rect key="frame" x="284" y="431" width="67" height="22"/>
+                                <fontDescription key="fontDescription" name="Vazir" family="Vazir" pointSize="14"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="چیدمان عنوان" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V0x-hh-yQ1">
+                                <rect key="frame" x="274" y="469" width="77" height="22"/>
+                                <fontDescription key="fontDescription" name="Vazir" family="Vazir" pointSize="14"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="B9F-vZ-zW8">
+                                <rect key="frame" x="24" y="466" width="180" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="180" id="Pfl-fj-h0N"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="چپ"/>
+                                    <segment title="وسط"/>
+                                    <segment title="راست"/>
+                                </segments>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="اکشن(ها)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dvg-83-YhI">
+                                <rect key="frame" x="273" y="353.5" width="78" height="31.5"/>
+                                <fontDescription key="fontDescription" name="Vazir-Medium" family="Vazir" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SK1-HO-GbH">
+                                <rect key="frame" x="127.5" y="595" width="120" height="48"/>
+                                <color key="backgroundColor" red="0.20596292614936829" green="0.46943831443786621" blue="0.96475642919540405" alpha="0.10000000000000001" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="g2W-zu-5K6"/>
+                                    <constraint firstAttribute="width" constant="120" id="uUD-Nq-Vwg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Vazir-Bold" family="Vazir" pointSize="20"/>
+                                <state key="normal" title="نمایش"/>
+                                <connections>
+                                    <action selector="actionPresentIDAlertController:" destination="MuS-zx-yvd" eventType="touchUpInside" id="Wvq-8q-mPZ"/>
+                                </connections>
+                            </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="H0n-NJ-2Vc">
+                                <rect key="frame" x="24" y="97" width="180" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="180" id="uVC-YV-j0z"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Alert"/>
+                                    <segment title="ActionSheet"/>
+                                </segments>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="oHu-iY-Aqw" firstAttribute="top" secondItem="B9F-vZ-zW8" secondAttribute="bottom" constant="12" id="1qF-pB-URF"/>
+                            <constraint firstItem="lnI-Nd-8Ps" firstAttribute="leading" secondItem="40r-wA-bip" secondAttribute="leading" constant="24" id="2MV-IU-jGY">
+                                <variation key="heightClass=regular-widthClass=regular" constant="100"/>
+                            </constraint>
+                            <constraint firstItem="40r-wA-bip" firstAttribute="trailing" secondItem="EdT-wG-piG" secondAttribute="trailing" constant="24" id="2YB-m5-SGP">
+                                <variation key="heightClass=regular-widthClass=regular" constant="100"/>
+                            </constraint>
+                            <constraint firstItem="Uu2-ao-r2f" firstAttribute="centerY" secondItem="3cW-HG-3hH" secondAttribute="centerY" id="4sd-em-zz9"/>
+                            <constraint firstItem="Uu2-ao-r2f" firstAttribute="leading" secondItem="40r-wA-bip" secondAttribute="leading" constant="24" id="87N-x7-uYd">
+                                <variation key="heightClass=regular-widthClass=regular" constant="100"/>
+                            </constraint>
+                            <constraint firstItem="B9F-vZ-zW8" firstAttribute="leading" secondItem="40r-wA-bip" secondAttribute="leading" constant="24" id="9DE-Aa-5D1">
+                                <variation key="heightClass=regular-widthClass=regular" constant="100"/>
+                            </constraint>
+                            <constraint firstItem="40r-wA-bip" firstAttribute="trailing" secondItem="oHu-iY-Aqw" secondAttribute="trailing" constant="24" id="AJe-My-ni7">
+                                <variation key="heightClass=regular-widthClass=regular" constant="100"/>
+                            </constraint>
+                            <constraint firstItem="H0n-NJ-2Vc" firstAttribute="leading" secondItem="40r-wA-bip" secondAttribute="leading" constant="24" id="AWW-Rc-SRs">
+                                <variation key="heightClass=regular-widthClass=regular" constant="100"/>
+                            </constraint>
+                            <constraint firstItem="45f-T0-pen" firstAttribute="centerY" secondItem="EdT-wG-piG" secondAttribute="centerY" id="AYA-Jp-vRU"/>
+                            <constraint firstItem="40r-wA-bip" firstAttribute="trailing" secondItem="V0x-hh-yQ1" secondAttribute="trailing" constant="24" id="B1D-dq-BL2">
+                                <variation key="heightClass=regular-widthClass=regular" constant="100"/>
+                            </constraint>
+                            <constraint firstItem="4W8-PW-dbd" firstAttribute="centerY" secondItem="jCO-HJ-Pg5" secondAttribute="centerY" id="BFv-VO-Szh"/>
+                            <constraint firstItem="HQX-A4-I2c" firstAttribute="leading" secondItem="40r-wA-bip" secondAttribute="leading" constant="24" id="Dj0-Si-nHs">
+                                <variation key="heightClass=regular-widthClass=regular" constant="100"/>
+                            </constraint>
+                            <constraint firstItem="SK1-HO-GbH" firstAttribute="centerX" secondItem="1oL-cv-ZTw" secondAttribute="centerX" id="FBx-qh-IGe"/>
+                            <constraint firstItem="6D0-TH-URi" firstAttribute="centerY" secondItem="i4k-Gp-3Vd" secondAttribute="centerY" id="Hsb-Hx-dwv"/>
+                            <constraint firstItem="45f-T0-pen" firstAttribute="leading" secondItem="40r-wA-bip" secondAttribute="leading" constant="24" id="JkV-M4-LNe">
+                                <variation key="heightClass=regular-widthClass=regular" constant="100"/>
+                            </constraint>
+                            <constraint firstItem="B9F-vZ-zW8" firstAttribute="centerY" secondItem="V0x-hh-yQ1" secondAttribute="centerY" id="KsF-km-yPH"/>
+                            <constraint firstItem="4W8-PW-dbd" firstAttribute="leading" secondItem="40r-wA-bip" secondAttribute="leading" constant="24" id="LJD-nc-F5n">
+                                <variation key="heightClass=regular-widthClass=regular" constant="100"/>
+                            </constraint>
+                            <constraint firstItem="40r-wA-bip" firstAttribute="trailing" secondItem="3cW-HG-3hH" secondAttribute="trailing" constant="24" id="Pzd-Ju-5dQ">
+                                <variation key="heightClass=regular-widthClass=regular" constant="100"/>
+                            </constraint>
+                            <constraint firstItem="Dvg-83-YhI" firstAttribute="top" secondItem="gd5-vP-k2c" secondAttribute="bottom" constant="20" id="QyM-Ip-rxj"/>
+                            <constraint firstItem="V0x-hh-yQ1" firstAttribute="top" secondItem="3cW-HG-3hH" secondAttribute="bottom" constant="16" id="T29-Tn-18f"/>
+                            <constraint firstItem="i4k-Gp-3Vd" firstAttribute="top" secondItem="Dvg-83-YhI" secondAttribute="bottom" constant="8" id="aXU-Ua-g1A"/>
+                            <constraint firstItem="jCO-HJ-Pg5" firstAttribute="top" secondItem="HQX-A4-I2c" secondAttribute="bottom" constant="20" id="b8q-79-7es"/>
+                            <constraint firstItem="H0n-NJ-2Vc" firstAttribute="centerY" secondItem="bB0-yf-5WP" secondAttribute="centerY" id="bKd-Th-eMU"/>
+                            <constraint firstItem="gd5-vP-k2c" firstAttribute="top" secondItem="jCO-HJ-Pg5" secondAttribute="bottom" constant="8" id="bMq-S3-GSw"/>
+                            <constraint firstItem="3cW-HG-3hH" firstAttribute="top" secondItem="i4k-Gp-3Vd" secondAttribute="bottom" constant="16" id="cZq-iY-lF5"/>
+                            <constraint firstItem="40r-wA-bip" firstAttribute="trailing" secondItem="lnI-Nd-8Ps" secondAttribute="trailing" constant="24" id="dGG-ZU-bEl">
+                                <variation key="heightClass=regular-widthClass=regular" constant="100"/>
+                            </constraint>
+                            <constraint firstItem="HQX-A4-I2c" firstAttribute="top" secondItem="EdT-wG-piG" secondAttribute="bottom" constant="8" id="ddg-Vr-4v8"/>
+                            <constraint firstItem="6D0-TH-URi" firstAttribute="leading" secondItem="40r-wA-bip" secondAttribute="leading" constant="24" id="f27-CI-PVi">
+                                <variation key="heightClass=regular-widthClass=regular" constant="100"/>
+                            </constraint>
+                            <constraint firstItem="40r-wA-bip" firstAttribute="bottom" secondItem="SK1-HO-GbH" secondAttribute="bottom" constant="24" id="ffJ-wl-mxq"/>
+                            <constraint firstItem="40r-wA-bip" firstAttribute="trailing" secondItem="i4k-Gp-3Vd" secondAttribute="trailing" constant="24" id="g8t-tw-btJ">
+                                <variation key="heightClass=regular-widthClass=regular" constant="100"/>
+                            </constraint>
+                            <constraint firstItem="bB0-yf-5WP" firstAttribute="top" secondItem="lnI-Nd-8Ps" secondAttribute="bottom" constant="15" id="i8W-6F-7r7"/>
+                            <constraint firstItem="40r-wA-bip" firstAttribute="trailing" secondItem="gd5-vP-k2c" secondAttribute="trailing" constant="24" id="jV5-3p-d34">
+                                <variation key="heightClass=regular-widthClass=regular" constant="100"/>
+                            </constraint>
+                            <constraint firstItem="40r-wA-bip" firstAttribute="trailing" secondItem="Dvg-83-YhI" secondAttribute="trailing" constant="24" id="keP-7L-rNu">
+                                <variation key="heightClass=regular-widthClass=regular" constant="100"/>
+                            </constraint>
+                            <constraint firstItem="40r-wA-bip" firstAttribute="trailing" secondItem="bB0-yf-5WP" secondAttribute="trailing" constant="24" id="nhE-Jj-Qy8">
+                                <variation key="heightClass=regular-widthClass=regular" constant="100"/>
+                            </constraint>
+                            <constraint firstItem="lnI-Nd-8Ps" firstAttribute="top" secondItem="40r-wA-bip" secondAttribute="top" constant="16" id="nrG-Qh-d3f"/>
+                            <constraint firstItem="40r-wA-bip" firstAttribute="trailing" secondItem="jCO-HJ-Pg5" secondAttribute="trailing" constant="24" id="oho-lX-5DI">
+                                <variation key="heightClass=regular-widthClass=regular" constant="100"/>
+                            </constraint>
+                            <constraint firstItem="40r-wA-bip" firstAttribute="trailing" secondItem="HQX-A4-I2c" secondAttribute="trailing" constant="24" id="okF-Uu-TFR">
+                                <variation key="heightClass=regular-widthClass=regular" constant="100"/>
+                            </constraint>
+                            <constraint firstItem="EdT-wG-piG" firstAttribute="top" secondItem="bB0-yf-5WP" secondAttribute="bottom" constant="20" id="pYe-8i-0rm"/>
+                            <constraint firstItem="oHu-iY-Aqw" firstAttribute="leading" secondItem="40r-wA-bip" secondAttribute="leading" constant="24" id="rBc-Wh-QAG">
+                                <variation key="heightClass=regular-widthClass=regular" constant="100"/>
+                            </constraint>
+                            <constraint firstItem="gd5-vP-k2c" firstAttribute="leading" secondItem="40r-wA-bip" secondAttribute="leading" constant="24" id="xP4-VX-eYc">
+                                <variation key="heightClass=regular-widthClass=regular" constant="100"/>
+                            </constraint>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="40r-wA-bip"/>
+                    </view>
+                    <connections>
+                        <outlet property="button_Present" destination="SK1-HO-GbH" id="AF3-qf-1BD"/>
+                        <outlet property="segment_AlertStyle" destination="H0n-NJ-2Vc" id="PkS-gy-srW"/>
+                        <outlet property="segment_TextAlignment" destination="B9F-vZ-zW8" id="Q3m-kz-nSt"/>
+                        <outlet property="switch_HasLeftImage" destination="6D0-TH-URi" id="UJq-lU-cgM"/>
+                        <outlet property="switch_HasMessage" destination="4W8-PW-dbd" id="FSC-JZ-xMu"/>
+                        <outlet property="switch_HasRightImage" destination="Uu2-ao-r2f" id="0mv-fK-3B9"/>
+                        <outlet property="switch_HasTitle" destination="45f-T0-pen" id="mp6-XA-Sf6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Smh-2w-9mT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1593" y="-654"/>
+        </scene>
+    </scenes>
+</document>
