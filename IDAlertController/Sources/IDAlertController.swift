@@ -10,15 +10,18 @@ import UIKit
 
 public class IDAlertController: NSObject {
 	
-	internal var alertController	: UIAlertController!
-	internal var idHeader			: IDAlertHeader?	= nil
-	internal var idActions			: [IDAlertAction]	= []
+	internal var alertController			: UIAlertController!
+	internal var idHeader					: IDAlertHeader?	= nil
+	internal var idActions					: [IDAlertAction]	= []
+	internal var sourceView					: UIView?			= nil
+	internal var permittedArrowDirections	: UIPopoverArrowDirection	= [.down, .up]
+	internal var sourceViewController		: UIViewController!
 	
-	public init(header: IDAlertHeader?, actions: [IDAlertAction], preferredStyle style: UIAlertController.Style) {
+	public init(header: IDAlertHeader?, actions: [IDAlertAction], preferredStyle: UIAlertController.Style) {
 		super.init()
 		
 		self.idHeader = header
-		self.alertController = .init(title: nil, message: nil, preferredStyle: style)
+		self.alertController = .init(title: nil, message: nil, preferredStyle: preferredStyle)
 		self.addIDActions(actions)
 	}
 	
@@ -34,13 +37,12 @@ public class IDAlertController: NSObject {
 		actions.forEach(self.addIDAction)
 	}
 	
-	public func setupPopoverPresentationController(sourceView: UIView, permittedArrowDirections: UIPopoverArrowDirection) {
-		alertController.popoverPresentationController?.sourceView = sourceView
-		alertController.popoverPresentationController?.sourceRect = sourceView.bounds
-		alertController.popoverPresentationController?.permittedArrowDirections = permittedArrowDirections
+	internal func setSourceViewController(_ viewController: UIViewController) {
+		self.sourceViewController = viewController
 	}
 	
 	internal func setupViewsBeforePresentation() {
+		setupPopoverPresentationController()
 		setupIDHeaderRelatedViews()
 	}
 	
@@ -50,6 +52,11 @@ public class IDAlertController: NSObject {
 	
 	public func setTintColor(_ color: UIColor) {
 		self.alertController.view.tintColor = color
+	}
+	
+	public func setupPopoverPresentationController(sourceView: UIView, permittedArrowDirections: UIPopoverArrowDirection) {
+		self.sourceView = sourceView
+		self.permittedArrowDirections = permittedArrowDirections
 	}
 	
 }
@@ -151,4 +158,11 @@ extension IDAlertController {
 		imageView.heightAnchor.constraint(equalToConstant: 28).isActive = true
 	}
 	
+	private func setupPopoverPresentationController() {
+		let view = sourceView ?? sourceViewController.view!
+		let permittedArrowDirections = sourceView == nil ? [] : self.permittedArrowDirections
+		alertController.popoverPresentationController?.sourceView = view
+		alertController.popoverPresentationController?.sourceRect = view.bounds
+		alertController.popoverPresentationController?.permittedArrowDirections = permittedArrowDirections
+	}
 }
