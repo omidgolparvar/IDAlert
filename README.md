@@ -2,6 +2,21 @@
 
 # آی‌دی آلرت ویوکنترلر
 
+## پیش‌نمایش!
+
+<table>
+  <tr>
+    <td>
+      <img src='./Other/01.png'>
+    </td>
+    <td>
+      <img src='./Other/02.png'>
+    </td>
+    <td>
+      <img src='./Other/03.png'>
+    </td>
+  </tr>
+</table>
 
 
 ## مشکل
