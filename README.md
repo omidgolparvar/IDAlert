@@ -104,11 +104,24 @@ static var MessageColor : UIColor = .darkGray
 
 <br>
 
+### مدل `IDAlertHeaderView`
+با استفاده از این مدل، می‌تونیم بجای نمایش عنوان و پیام، از یه ویو اختصاصی برای هدر آلرت‌کنترلر استفاده کنیم.
+
+#### نحوه ساخت
+متدی که برای ساخت استفاده میشه، بصورت زیر تعریف میشه:
+
+<pre dir='ltr'>
+init(contentView: UIView, height: CGFloat)
+</pre>
+
+این سازنده، دوتا پارامتر ورودی داره. یکی خود اون ویویی که قرار هست نمایش داده بشه، و یکی هم ارتفاع مورد نیاز ما.  نکته‌ای که هست، اینه که این ارتفاع رو جوری در نظر بگیرین که چیزی توی ویو شما از قلم نیوفته!!
+
+
 ### مدل `IDAlertController`
 این مدل همون مدلی هست با استفاده ازش، خود `UIAlertController` نمایش داده میشه.
 
 #### نحوه ساخت
-متدی که برای ساخت استفاده میشه، بصورت زیر تعریف شده:
+براساس نوع استفاده ما، دوتا سازنده داریم:
 
 <pre dir='ltr'>
 init(header: IDAlertHeader?, actions: [IDAlertAction], preferredStyle style: UIAlertController.Style)
@@ -119,6 +132,19 @@ init(header: IDAlertHeader?, actions: [IDAlertAction], preferredStyle style: UIA
 ورودی دوم میشه اکشن‌های مورد نظر شما؛ که رویه ساخت‌شون رو قبل‌تر توضیح دادم.
 
 ورودی سوم هم مشخص‌کننده نوع نمایش آلرت‌کنترلر هست؛ اینکه بصورت `ActionSheet` باشه یا بصورت `Alert`. 
+
+
+<br>
+
+و نوع دوم سازنده هم بصورت زیر هست:
+
+<pre dir='ltr'>
+init(headerView: IDAlertHeaderView, actions: [IDAlertAction], preferredStyle: UIAlertController.Style)
+</pre>
+
+
+این سازنده، یه `IDAlertHeaderView` می‌گیره. ورودی دوم میشه اکشن‌های مورد نظر شما؛ که رویه ساخت‌شون رو قبل‌تر توضیح دادم. ورودی سوم هم مشخص‌کننده نوع نمایش آلرت‌کنترلر هست؛ اینکه بصورت `ActionSheet` باشه یا بصورت `Alert`. 
+
 
 #### متدها
 دوتا متد در دسترس شماست:
