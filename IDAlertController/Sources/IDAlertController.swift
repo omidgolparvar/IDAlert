@@ -11,9 +11,10 @@ import UIKit
 public class IDAlertController: NSObject {
 	
 	internal var alertController			: UIAlertController!
-	internal var idHeader					: IDAlertHeader?	= nil
-	internal var idActions					: [IDAlertAction]	= []
-	internal var sourceView					: UIView?			= nil
+	internal var idHeader					: IDAlertHeader?			= nil
+	internal var idHeaderView				: IDAlertHeaderView?		= nil
+	internal var idActions					: [IDAlertAction]			= []
+	internal var sourceView					: UIView?					= nil
 	internal var permittedArrowDirections	: UIPopoverArrowDirection	= [.down, .up]
 	internal var sourceViewController		: UIViewController!
 	
@@ -22,6 +23,14 @@ public class IDAlertController: NSObject {
 		
 		self.idHeader = header
 		self.alertController = .init(title: nil, message: nil, preferredStyle: preferredStyle)
+		self.addIDActions(actions)
+	}
+	
+	public init(headerView: IDAlertHeaderView, actions: [IDAlertAction], preferredStyle: UIAlertController.Style) {
+		super.init()
+		
+		self.idHeaderView = headerView
+		self.alertController = .init(title: "__CUSTOM_CONTENT_MARKER__", message: nil, preferredStyle: preferredStyle)
 		self.addIDActions(actions)
 	}
 	
@@ -64,6 +73,14 @@ public class IDAlertController: NSObject {
 extension IDAlertController {
 	
 	private func setupIDHeaderRelatedViews() {
+		if let _ = idHeader {
+			setupIDAlertTitleAndMessage()
+		} else if let _ = idHeaderView {
+			setupIDAlertHeaderView()
+		}
+	}
+	
+	private func setupIDAlertTitleAndMessage() {
 		guard let idHeader = idHeader else { return }
 		if let title = idHeader.title {
 			let titleAttributedString = NSAttributedString(string: title, attributes: [
@@ -82,7 +99,28 @@ extension IDAlertController {
 			)
 			alertController.setValue(messageAttributedString, forKey: "attributedMessage")
 		}
+	}
+	
+	private func setupIDAlertHeaderView() {
+		guard let idHeaderView = idHeaderView else { return }
 		
+		guard
+			let label = alertController.view.findAlertControllerContentLabel(),
+			let superView = label.superview
+			else { return }
+		
+		let contentView = idHeaderView.contentView
+		
+		superView.addSubview(contentView)
+		
+		contentView.translatesAutoresizingMaskIntoConstraints = false
+		contentView.topAnchor.constraint(equalTo: superView.topAnchor, constant: 0).isActive = true
+		contentView.rightAnchor.constraint(equalTo: superView.rightAnchor, constant: 0).isActive = true
+		contentView.leftAnchor.constraint(equalTo: superView.leftAnchor, constant: 0).isActive = true
+		contentView.bottomAnchor.constraint(equalTo: superView.bottomAnchor, constant: 0).isActive = true
+		contentView.heightAnchor.constraint(equalToConstant: idHeaderView.height).isActive = true
+		
+		label.text = ""
 	}
 	
 	private func setupIDActionsRelatedViews() {
@@ -98,7 +136,6 @@ extension IDAlertController {
 				
 				setupLabel(for: action, in: holder)
 				setupImages(for: action, in: holder)
-				
 		}
 	}
 	
@@ -130,19 +167,20 @@ extension IDAlertController {
 	}
 	
 	private func setupImages(for action: IDAlertAction, in holder: UIView) {
+		let tintColor: UIColor? = action.actionStyle == .destructive ? .red : nil
 		if let image = action.leftImage {
-			setupImage(with: image, in: holder, isLeftImage: true)
+			setupImage(with: image, in: holder, isLeftImage: true, tintColor: tintColor)
 		}
 		if let image = action.rightImage {
-			setupImage(with: image, in: holder, isLeftImage: false)
+			setupImage(with: image, in: holder, isLeftImage: false, tintColor: tintColor)
 		}
 	}
 	
-	private func setupImage(with image: UIImage, in holder: UIView, isLeftImage: Bool) {
+	private func setupImage(with image: UIImage, in holder: UIView, isLeftImage: Bool, tintColor: UIColor?) {
 		let imageView = UIImageView(frame: .zero)
 		imageView.translatesAutoresizingMaskIntoConstraints = false
 		imageView.image = image
-		imageView.tintColor = alertController.view.tintColor
+		imageView.tintColor = tintColor ?? alertController.view.tintColor
 		imageView.contentMode = .scaleAspectFit
 		
 		let holderSuperView = holder.superview!
@@ -165,4 +203,5 @@ extension IDAlertController {
 		alertController.popoverPresentationController?.sourceRect = view.bounds
 		alertController.popoverPresentationController?.permittedArrowDirections = permittedArrowDirections
 	}
+	
 }
