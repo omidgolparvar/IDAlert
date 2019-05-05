@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A08FFBF227C443C00643EDF /* IDAlertHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A08FFBE227C443C00643EDF /* IDAlertHeaderView.swift */; };
+		1A08FFC1227C590100643EDF /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A08FFC0227C590100643EDF /* CustomView.swift */; };
+		1A08FFC3227C590F00643EDF /* CustomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A08FFC2227C590F00643EDF /* CustomView.xib */; };
 		1A165644227863A90085E9EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A165643227863A90085E9EF /* AppDelegate.swift */; };
 		1A165646227863A90085E9EF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A165645227863A90085E9EF /* ViewController.swift */; };
 		1A165649227863A90085E9EF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A165647227863A90085E9EF /* Main.storyboard */; };
@@ -19,9 +22,13 @@
 		1A165665227883430085E9EF /* Vazir.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1A165662227883430085E9EF /* Vazir.ttf */; };
 		1A165666227883430085E9EF /* Vazir-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1A165663227883430085E9EF /* Vazir-Medium.ttf */; };
 		1A165667227883430085E9EF /* Vazir-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1A165664227883430085E9EF /* Vazir-Bold.ttf */; };
+		1A931EFC227D7D2700DD233F /* Extension+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A931EFB227D7D2700DD233F /* Extension+UIView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1A08FFBE227C443C00643EDF /* IDAlertHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDAlertHeaderView.swift; sourceTree = "<group>"; };
+		1A08FFC0227C590100643EDF /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
+		1A08FFC2227C590F00643EDF /* CustomView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomView.xib; sourceTree = "<group>"; };
 		1A165640227863A90085E9EF /* IDAlertController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IDAlertController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A165643227863A90085E9EF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1A165645227863A90085E9EF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -36,6 +43,7 @@
 		1A165662227883430085E9EF /* Vazir.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Vazir.ttf; sourceTree = "<group>"; };
 		1A165663227883430085E9EF /* Vazir-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Vazir-Medium.ttf"; sourceTree = "<group>"; };
 		1A165664227883430085E9EF /* Vazir-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Vazir-Bold.ttf"; sourceTree = "<group>"; };
+		1A931EFB227D7D2700DD233F /* Extension+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIView.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +86,8 @@
 				1A16564C227863AB0085E9EF /* LaunchScreen.storyboard */,
 				1A16564F227863AB0085E9EF /* Info.plist */,
 				1A16565F22787DCA0085E9EF /* Sources */,
+				1A08FFC0227C590100643EDF /* CustomView.swift */,
+				1A08FFC2227C590F00643EDF /* CustomView.xib */,
 			);
 			path = IDAlertController;
 			sourceTree = "<group>";
@@ -89,6 +99,8 @@
 				1A1656572278640C0085E9EF /* IDAlertAction.swift */,
 				1A16565922786BC70085E9EF /* IDAlertController.swift */,
 				1A16565B227875C30085E9EF /* IDAlertHeader.swift */,
+				1A08FFBE227C443C00643EDF /* IDAlertHeaderView.swift */,
+				1A931EFB227D7D2700DD233F /* Extension+UIView.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -157,6 +169,7 @@
 				1A165666227883430085E9EF /* Vazir-Medium.ttf in Resources */,
 				1A165667227883430085E9EF /* Vazir-Bold.ttf in Resources */,
 				1A165649227863A90085E9EF /* Main.storyboard in Resources */,
+				1A08FFC3227C590F00643EDF /* CustomView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -168,11 +181,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				1A16565E227879C10085E9EF /* Extension+UIViewController.swift in Sources */,
+				1A08FFC1227C590100643EDF /* CustomView.swift in Sources */,
 				1A1656582278640C0085E9EF /* IDAlertAction.swift in Sources */,
+				1A08FFBF227C443C00643EDF /* IDAlertHeaderView.swift in Sources */,
 				1A16565C227875C30085E9EF /* IDAlertHeader.swift in Sources */,
 				1A165646227863A90085E9EF /* ViewController.swift in Sources */,
 				1A16565A22786BC70085E9EF /* IDAlertController.swift in Sources */,
 				1A165644227863A90085E9EF /* AppDelegate.swift in Sources */,
+				1A931EFC227D7D2700DD233F /* Extension+UIView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
