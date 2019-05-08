@@ -1,8 +1,8 @@
 Pod::Spec.new do |s|
   s.name                  = 'IDAlert'
-  s.version               = '2.0.0'
-  s.summary               = 'IDAlert: Customizable UIAlertController'
-  s.description           = 'IDAlert: Customizable UIAlertController. Written in Swift.'
+  s.version               = '3.0.0'
+  s.summary               = 'IDAlert: یه سری کارا روی آلرت‌کنترلر کردم که استفاده‌اش رو برای زبان پارسی بهتر و قشنگ‌تر و بهینه‌تر کنه.'
+  s.description           = 'IDAlert: یه سری کارا روی آلرت‌کنترلر کردم که استفاده‌اش رو برای زبان پارسی بهتر و قشنگ‌تر و بهینه‌تر کنه.'
   s.homepage              = 'https://github.com/omidgolparvar/IDAlert'
   s.license               = { :type => 'MIT', :file => 'LICENSE.md' }
   s.author                = { 'Omid Golparvar' => 'iGolparvar@gmail.com' }
