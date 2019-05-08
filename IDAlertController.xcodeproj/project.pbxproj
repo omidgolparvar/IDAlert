@@ -22,6 +22,9 @@
 		1A165665227883430085E9EF /* Vazir.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1A165662227883430085E9EF /* Vazir.ttf */; };
 		1A165666227883430085E9EF /* Vazir-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1A165663227883430085E9EF /* Vazir-Medium.ttf */; };
 		1A165667227883430085E9EF /* Vazir-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1A165664227883430085E9EF /* Vazir-Bold.ttf */; };
+		1A6D1D262281BBF5001FC38C /* IDAlertAction+Normal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6D1D252281BBF5001FC38C /* IDAlertAction+Normal.swift */; };
+		1A6D1D282281D164001FC38C /* IDAlertAction+TitleAndSubtitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6D1D272281D164001FC38C /* IDAlertAction+TitleAndSubtitle.swift */; };
+		1A6D1D2A2281D612001FC38C /* IDAlertAction+Initializers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6D1D292281D612001FC38C /* IDAlertAction+Initializers.swift */; };
 		1A931EFC227D7D2700DD233F /* Extension+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A931EFB227D7D2700DD233F /* Extension+UIView.swift */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +46,9 @@
 		1A165662227883430085E9EF /* Vazir.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Vazir.ttf; sourceTree = "<group>"; };
 		1A165663227883430085E9EF /* Vazir-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Vazir-Medium.ttf"; sourceTree = "<group>"; };
 		1A165664227883430085E9EF /* Vazir-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Vazir-Bold.ttf"; sourceTree = "<group>"; };
+		1A6D1D252281BBF5001FC38C /* IDAlertAction+Normal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IDAlertAction+Normal.swift"; sourceTree = "<group>"; };
+		1A6D1D272281D164001FC38C /* IDAlertAction+TitleAndSubtitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IDAlertAction+TitleAndSubtitle.swift"; sourceTree = "<group>"; };
+		1A6D1D292281D612001FC38C /* IDAlertAction+Initializers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IDAlertAction+Initializers.swift"; sourceTree = "<group>"; };
 		1A931EFB227D7D2700DD233F /* Extension+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIView.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -97,6 +103,9 @@
 			children = (
 				1A16565D227879C10085E9EF /* Extension+UIViewController.swift */,
 				1A1656572278640C0085E9EF /* IDAlertAction.swift */,
+				1A6D1D252281BBF5001FC38C /* IDAlertAction+Normal.swift */,
+				1A6D1D272281D164001FC38C /* IDAlertAction+TitleAndSubtitle.swift */,
+				1A6D1D292281D612001FC38C /* IDAlertAction+Initializers.swift */,
 				1A16565922786BC70085E9EF /* IDAlertController.swift */,
 				1A16565B227875C30085E9EF /* IDAlertHeader.swift */,
 				1A08FFBE227C443C00643EDF /* IDAlertHeaderView.swift */,
@@ -180,6 +189,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A6D1D2A2281D612001FC38C /* IDAlertAction+Initializers.swift in Sources */,
 				1A16565E227879C10085E9EF /* Extension+UIViewController.swift in Sources */,
 				1A08FFC1227C590100643EDF /* CustomView.swift in Sources */,
 				1A1656582278640C0085E9EF /* IDAlertAction.swift in Sources */,
@@ -188,6 +198,8 @@
 				1A165646227863A90085E9EF /* ViewController.swift in Sources */,
 				1A16565A22786BC70085E9EF /* IDAlertController.swift in Sources */,
 				1A165644227863A90085E9EF /* AppDelegate.swift in Sources */,
+				1A6D1D262281BBF5001FC38C /* IDAlertAction+Normal.swift in Sources */,
+				1A6D1D282281D164001FC38C /* IDAlertAction+TitleAndSubtitle.swift in Sources */,
 				1A931EFC227D7D2700DD233F /* Extension+UIView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -16,10 +16,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 		
-		IDAlertHeader.TitleFont		= UIFont(name: "Vazir-Bold", size: 16)!
-		IDAlertHeader.MessageFont	= UIFont(name: "Vazir", size: 14)!
+		IDAlertHeader.TitleFont			= UIFont(name: "Vazir-Bold", size: 16)!
+		IDAlertHeader.MessageFont		= UIFont(name: "Vazir", size: 14)!
 		
-		IDAlertAction.TextFont		= UIFont(name: "Vazir-Medium", size: 18)!
+		IDAlertAction.TitleTextFont		= UIFont(name: "Vazir-Medium", size: 18)!
+		IDAlertAction.SubtitleTextFont	= UIFont(name: "Vazir", size: 14)!
 		
 		return true
 	}

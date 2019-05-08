@@ -13,11 +13,12 @@ class ViewController: UIViewController {
 	@IBOutlet weak var segment_AlertStyle					: UISegmentedControl!
 	@IBOutlet weak var button_PresentWithTitleAndMessage	: UIButton!
 	@IBOutlet weak var button_PresentWithCustomHeaderView	: UIButton!
+	@IBOutlet weak var button_PresentWithTitleAndSubtitle	: UIButton!
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
-		[button_PresentWithTitleAndMessage!, button_PresentWithCustomHeaderView!].forEach {
+		[button_PresentWithTitleAndMessage!, button_PresentWithCustomHeaderView!, button_PresentWithTitleAndSubtitle!].forEach {
 			$0.layer.cornerRadius = 6
 			$0.clipsToBounds = true
 			$0.layer.borderColor = $0.tintColor.cgColor
@@ -31,6 +32,8 @@ class ViewController: UIViewController {
 			presentIDAlertController(customViewAsHeader: false, sourceView: sender)
 		case button_PresentWithCustomHeaderView:
 			presentIDAlertController(customViewAsHeader: true, sourceView: sender)
+		case button_PresentWithTitleAndSubtitle:
+			presentIDAlertControllerForActionsWithTitleAndSubtitle(sourceView: sender)
 		default:
 			break
 		}
@@ -38,22 +41,28 @@ class ViewController: UIViewController {
 	
 	
 	private func presentIDAlertController(customViewAsHeader: Bool, sourceView: UIButton) {
-		var idAlertAction = IDAlertAction(title: "گزینه نمایشی باحال") {
-			print("Ok.")
+		
+		let idAlertAction_0 = IDAlertAction.InitializeNormalAction(
+			title		: "گزینه نمایشی باحال",
+			alignment	: .center,
+			leftImage	: #imageLiteral(resourceName: "Image1"),
+			rightImage	: #imageLiteral(resourceName: "Image0")) {
+				print("Ok.")
 		}
 		
-		idAlertAction.setupImages(leftImage: #imageLiteral(resourceName: "Image1"), rightImage: #imageLiteral(resourceName: "Image0"))
-		idAlertAction.setupText(alignment: .center, color: nil, font: nil)
-		
-		var idAlertAction_Delete = IDAlertAction(title: "یک گزینه خطرناک!") {
-			print("Deleted.")
+		let idAlertAction_1 = IDAlertAction.InitializeNormalAction(
+			title		: "یک گزینه خطرناک!",
+			alignment	: .right,
+			leftImage	: #imageLiteral(resourceName: "Image0"),
+			actionStyle	: .destructive) {
+				print("Deleted.")
 		}
-		idAlertAction_Delete.setupText(alignment: .right, color: .red, font: nil)
-		idAlertAction_Delete.setupImages(leftImage: #imageLiteral(resourceName: "Image0"), rightImage: nil)
-		idAlertAction_Delete.setActionStyle(.destructive)
 		
-		var idAlertAction_Cancel = IDAlertAction(title: "بازگشت", handler: nil)
-		idAlertAction_Cancel.setActionStyle(.cancel)
+		let idAlertAction_2 = IDAlertAction.InitializeNormalAction(
+			title		: "بازگشت",
+			actionStyle	: .cancel,
+			handler		: nil)
+		
 		
 		let alertControllerStyle: UIAlertController.Style
 		switch segment_AlertStyle.selectedSegmentIndex {
@@ -62,7 +71,7 @@ class ViewController: UIViewController {
 		default	: fatalError("WTF?!")
 		}
 		
-		let idAlertActions = [idAlertAction, idAlertAction_Delete, idAlertAction_Cancel]
+		let idAlertActions = [idAlertAction_0, idAlertAction_1, idAlertAction_2]
 		
 		let idAlertController: IDAlertController
 		
@@ -101,6 +110,60 @@ class ViewController: UIViewController {
 		)
 		
 		self.present(idAlertController, animated: true, completion: nil)
+		
+	}
+	
+	private func presentIDAlertControllerForActionsWithTitleAndSubtitle(sourceView: UIButton) {
+		
+		let idAlertAction_0 = IDAlertAction.InitializeTitleAndSubtitleAction(
+			title			: "یک گزینه زیبا",
+			titleColor		: self.view.tintColor,
+			subtitle		: "با زدن این گزینه، هیچ اتفاق خاصی نمیوفته! ولی زدنش خالی از لطف نیست!!",
+			subtitleColor	: self.view.tintColor) {
+				print("OK.")
+		}
+		
+		let idAlertAction_1 = IDAlertAction.InitializeTitleAndSubtitleAction(
+			title		: "یک گزینه خطرناک!!",
+			titleColor	: .red,
+			subtitle	: "ترس نداره که!! با زدن اینم هیچ اتفاقی نمیوفته. ولی بزنین؛ طوری نمیشه.",
+			actionStyle	: .destructive) {
+				print("Deleted.")
+		}
+		
+		let idAlertAction_2 = IDAlertAction.InitializeNormalAction(
+			title		: "بازگشت",
+			actionStyle	: .cancel,
+			handler		: nil)
+		
+		
+		let alertControllerStyle: UIAlertController.Style
+		switch segment_AlertStyle.selectedSegmentIndex {
+		case 0	: alertControllerStyle = .alert
+		case 1	: alertControllerStyle = .actionSheet
+		default	: fatalError("WTF?!")
+		}
+		
+		let idAlertActions = [idAlertAction_0, idAlertAction_1, idAlertAction_2]
+		
+		let idAlertHeader = IDAlertHeader(
+			title	: "عنوان نمونه",
+			message	: "این یک متن نمونه است که می‌تواند دارای بیشتر از یک خط نیز باشد. و باید بدرستی نمایش داده شود."
+		)
+		
+		let idAlertController = IDAlertController(
+			header			: idAlertHeader,
+			actions			: idAlertActions,
+			preferredStyle	: alertControllerStyle
+		)
+		
+		idAlertController.setupPopoverPresentationController(
+			sourceView					: sourceView,
+			permittedArrowDirections	: [.up, .down]
+		)
+		
+		self.present(idAlertController, animated: true, completion: nil)
+		
 	}
 	
 }
