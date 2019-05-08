@@ -35,7 +35,14 @@ public class IDAlertController: NSObject {
 	}
 	
 	private func addIDAction(_ action: IDAlertAction) {
-		let newAction = UIAlertAction(title: " ", style: action.actionStyle) { (_) in
+		let actionStyle: UIAlertAction.Style
+		switch action.actionContent {
+		case .normal(let content):
+			actionStyle = content.actionStyle
+		case .titleAndSubtitle(let content):
+			actionStyle = content.actionStyle
+		}
+		let newAction = UIAlertAction(title: " ", style: actionStyle) { (_) in
 			action.handler?()
 		}
 		alertController.addAction(newAction)
@@ -140,38 +147,78 @@ extension IDAlertController {
 	}
 	
 	private func setupLabel(for action: IDAlertAction, in holder: UIView) {
-		let newLabel = UILabel(frame: .zero)
-		newLabel.translatesAutoresizingMaskIntoConstraints = false
-		newLabel.font = action.textFont ?? IDAlertAction.TextFont
-		newLabel.text = action.title
-		newLabel.textColor = action.textColor ?? alertController.view.tintColor
-		newLabel.textAlignment = action.textAlignment
-		
-		let rightMargin	: CGFloat
-		let leftMargin	: CGFloat
-		
-		if action.textAlignment == .center {
-			rightMargin = action.hasImage ? -60 : -16
-			leftMargin = action.hasImage ? 60 : 16
-		} else {
-			rightMargin = action.rightImage == nil ? -16 : -60
-			leftMargin = action.leftImage == nil ? 16 : 60
+		switch action.actionContent {
+		case .normal(let content):
+			let newLabel = UILabel(frame: .zero)
+			newLabel.translatesAutoresizingMaskIntoConstraints = false
+			newLabel.font = content.textFont ?? IDAlertAction.TitleTextFont
+			newLabel.text = content.title
+			newLabel.textColor = content.textColor ?? alertController.view.tintColor
+			newLabel.textAlignment = content.textAlignment
+			
+			let rightMargin	: CGFloat
+			let leftMargin	: CGFloat
+			
+			if content.textAlignment == .center {
+				rightMargin = content.hasImage ? -60 : -16
+				leftMargin = content.hasImage ? 60 : 16
+			} else {
+				rightMargin = content.rightImage == nil ? -16 : -60
+				leftMargin = content.leftImage == nil ? 16 : 60
+			}
+			
+			let holderSuperView = holder.superview!
+			holder.addSubview(newLabel)
+			newLabel.topAnchor.constraint(equalTo: holderSuperView.topAnchor, constant: 4).isActive = true
+			newLabel.rightAnchor.constraint(equalTo: holderSuperView.rightAnchor, constant: rightMargin).isActive = true
+			newLabel.bottomAnchor.constraint(equalTo: holderSuperView.bottomAnchor, constant: -4).isActive = true
+			newLabel.leftAnchor.constraint(equalTo: holderSuperView.leftAnchor, constant: leftMargin).isActive = true
+		case .titleAndSubtitle(let content):
+			let finalAttributedString = NSMutableAttributedString(string: "", attributes: nil)
+			
+			let paragraphStyle = NSMutableParagraphStyle()
+			paragraphStyle.alignment = .right
+			
+			let titleAttributedString = NSAttributedString(string: content.title + "\n", attributes: [
+				.font: (content.titleFont ?? IDAlertAction.TitleTextFont),
+				.foregroundColor: (content.titleColor ?? .black),
+				.paragraphStyle: paragraphStyle
+				]
+			)
+			let subtitleAttributedString = NSAttributedString(string: content.subtitle, attributes: [
+				.font: (content.subtitleFont ?? IDAlertAction.SubtitleTextFont),
+				.foregroundColor: (content.subtitleColor ?? .darkGray),
+				.paragraphStyle: paragraphStyle
+				]
+			)
+			
+			finalAttributedString.append(titleAttributedString)
+			finalAttributedString.append(subtitleAttributedString)
+			
+			let newLabel = UILabel(frame: .zero)
+			newLabel.translatesAutoresizingMaskIntoConstraints = false
+			newLabel.numberOfLines = 0
+			newLabel.attributedText = finalAttributedString
+			
+			
+			let holderSuperView = holder.superview!
+			holder.addSubview(newLabel)
+			newLabel.topAnchor.constraint(equalTo: holderSuperView.topAnchor, constant: 8).isActive = true
+			newLabel.rightAnchor.constraint(equalTo: holderSuperView.rightAnchor, constant: -16).isActive = true
+			newLabel.bottomAnchor.constraint(equalTo: holderSuperView.bottomAnchor, constant: -8).isActive = true
+			newLabel.leftAnchor.constraint(equalTo: holderSuperView.leftAnchor, constant: 16).isActive = true
+			newLabel.heightAnchor.constraint(equalToConstant: content.actionHeight ?? 80).isActive = true
 		}
-		
-		let holderSuperView = holder.superview!
-		holder.addSubview(newLabel)
-		newLabel.topAnchor.constraint(equalTo: holderSuperView.topAnchor, constant: 4).isActive = true
-		newLabel.rightAnchor.constraint(equalTo: holderSuperView.rightAnchor, constant: rightMargin).isActive = true
-		newLabel.bottomAnchor.constraint(equalTo: holderSuperView.bottomAnchor, constant: -4).isActive = true
-		newLabel.leftAnchor.constraint(equalTo: holderSuperView.leftAnchor, constant: leftMargin).isActive = true
 	}
 	
 	private func setupImages(for action: IDAlertAction, in holder: UIView) {
-		let tintColor: UIColor? = action.actionStyle == .destructive ? .red : nil
-		if let image = action.leftImage {
+		guard case let .normal(content) = action.actionContent else { return }
+		
+		let tintColor: UIColor? = content.actionStyle == .destructive ? .red : nil
+		if let image = content.leftImage {
 			setupImage(with: image, in: holder, isLeftImage: true, tintColor: tintColor)
 		}
-		if let image = action.rightImage {
+		if let image = content.rightImage {
 			setupImage(with: image, in: holder, isLeftImage: false, tintColor: tintColor)
 		}
 	}
