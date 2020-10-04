@@ -1,37 +1,29 @@
-//
-//  IDAlertAction+Normal.swift
-//  IDAlertController
-//
-//  Created by Omid Golparvar on 5/7/19.
-//  Copyright © 2019 Omid Golparvar. All rights reserved.
-//
-
 import Foundation
 import UIKit
 
-internal extension IDAlertAction {
+extension IDAlertAction {
 	
-	internal struct NormalContent {
+	struct NormalContent {
 		
-		internal var title			: String
-		internal var textAlignment	: NSTextAlignment
-		internal var textColor		: UIColor?
-		internal var textFont		: UIFont?
-		internal var leftImage		: UIImage?
-		internal var rightImage		: UIImage?
-		internal var actionStyle	: UIAlertAction.Style
+		var title			: String
+		var textAlignment	: NSTextAlignment
+		var textColor		: UIColor?
+		var textFont		: UIFont?
+		var leftImage		: UIImage?
+		var rightImage		: UIImage?
+		var actionStyle		: UIAlertAction.Style
 		
-		internal var hasImage		: Bool {
+		var hasImage		: Bool {
 			return leftImage != nil || rightImage != nil
 		}
 		
-		internal init(title			: String,
-					  alignment		: NSTextAlignment,
-					  color			: UIColor?,
-					  font			: UIFont?,
-					  leftImage		: UIImage?,
-					  rightImage	: UIImage?,
-					  actionStyle	: UIAlertAction.Style) {
+		init(title			: String,
+			 alignment		: NSTextAlignment,
+			 color			: UIColor?,
+			 font			: UIFont?,
+			 leftImage		: UIImage?,
+			 rightImage		: UIImage?,
+			 actionStyle	: UIAlertAction.Style) {
 			
 			self.title			= title
 			self.textAlignment	= alignment

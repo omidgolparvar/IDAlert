@@ -1,17 +1,9 @@
-//
-//  IDAlertAction+Initializers.swift
-//  IDAlertController
-//
-//  Created by Omid Golparvar on 5/7/19.
-//  Copyright © 2019 Omid Golparvar. All rights reserved.
-//
-
 import Foundation
 import UIKit
 
 public extension IDAlertAction {
 	
-	public static func InitializeNormalAction(
+	static func InitializeNormalAction(
 		title		: String,
 		alignment	: NSTextAlignment		= .center,
 		color		: UIColor?				= nil,
@@ -34,7 +26,7 @@ public extension IDAlertAction {
 		return IDAlertAction(actionContent: .normal(content), handler: handler)
 	}
 	
-	public static func InitializeTitleAndSubtitleAction(
+	static func InitializeTitleAndSubtitleAction(
 		title			: String,
 		titleColor		: UIColor?				= nil,
 		titleFont		: UIFont?				= nil,
