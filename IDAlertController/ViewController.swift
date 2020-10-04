@@ -1,14 +1,6 @@
-//
-//  ViewController.swift
-//  IDAlertController
-//
-//  Created by Omid Golparvar on 4/30/19.
-//  Copyright © 2019 Omid Golparvar. All rights reserved.
-//
-
 import UIKit
 
-class ViewController: UIViewController {
+final class ViewController: UIViewController {
 	
 	@IBOutlet weak var segment_AlertStyle					: UISegmentedControl!
 	@IBOutlet weak var button_PresentWithTitleAndMessage	: UIButton!
@@ -18,11 +10,16 @@ class ViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
-		[button_PresentWithTitleAndMessage!, button_PresentWithCustomHeaderView!, button_PresentWithTitleAndSubtitle!].forEach {
-			$0.layer.cornerRadius = 6
-			$0.clipsToBounds = true
-			$0.layer.borderColor = $0.tintColor.cgColor
-			$0.layer.borderWidth = 1.0
+		let buttons = [
+			button_PresentWithTitleAndMessage!,
+			button_PresentWithCustomHeaderView!,
+			button_PresentWithTitleAndSubtitle!
+		]
+		buttons.forEach { button in
+			button.layer.cornerRadius = 6
+			button.clipsToBounds = true
+			button.layer.borderColor = button.tintColor.cgColor
+			button.layer.borderWidth = 1.0
 		}
 	}
 	
@@ -109,7 +106,7 @@ class ViewController: UIViewController {
 			permittedArrowDirections	: [.up, .down]
 		)
 		
-		self.present(idAlertController, animated: true, completion: nil)
+		present(idAlertController, animated: true, completion: nil)
 		
 	}
 	
@@ -162,7 +159,7 @@ class ViewController: UIViewController {
 			permittedArrowDirections	: [.up, .down]
 		)
 		
-		self.present(idAlertController, animated: true, completion: nil)
+		present(idAlertController, animated: true, completion: nil)
 		
 	}
 	

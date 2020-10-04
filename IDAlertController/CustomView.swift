@@ -1,11 +1,3 @@
-//
-//  CustomView.swift
-//  IDAlertController
-//
-//  Created by Omid Golparvar on 5/3/19.
-//  Copyright © 2019 Omid Golparvar. All rights reserved.
-//
-
 import UIKit
 
 class CustomView: UIView {
