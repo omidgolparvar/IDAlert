@@ -1,11 +1,3 @@
-//
-//  IDAlertController.swift
-//  IDAlertController
-//
-//  Created by Omid Golparvar on 4/30/19.
-//  Copyright © 2019 Omid Golparvar. All rights reserved.
-//
-
 import UIKit
 
 public class IDAlertController: NSObject {
